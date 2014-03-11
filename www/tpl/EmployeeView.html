@@ -1,0 +1,84 @@
+<header class="bar bar-nav">
+    <a class="btn btn-link btn-nav pull-left btn-back">
+        <span class="icon icon-left-nav"></span>
+        Back
+    </a>
+    <h1 class="title">Details</h1>
+</header>
+<div class='content'>
+    <div class="details">
+        <img src='pics/<%= firstName %>_<%= lastName %>.jpg'/>
+        <h1><%= firstName %> <%= lastName %></h1>
+        <p><%= title %><br/>
+        <%= city %></p>
+    </div>
+    <ul class="table-view" style="clear:both;">
+        <% if (managerId) { %>
+        <li class="table-view-cell media">
+            <a href="#employees/<%= managerId %>" class="push-right">
+                <span class="media-object pull-left icon icon-manager"></span>
+                <div class="media-body">
+                    View Manager
+                    <p><%= managerName %></p>
+                </div>
+            </a>
+        </li>
+        <% } %>
+        <% if (reports > 0) { %>
+        <li class="table-view-cell media">
+            <a href="#employees/<%= id %>/reports" class="push-right">
+                <span class="media-object pull-left icon icon-reports"></span>
+                <div class="media-body">
+                    View Direct Reports
+                    <p><%= reports %></p>
+                </div>
+            </a>
+        </li>
+        <% } %>
+        <li class="table-view-cell media">
+            <a href="tel:<%= officePhone %>" class="push-right">
+                <span class="media-object pull-left icon icon-call"></span>
+                <div class="media-body">
+                    Call Office
+                    <p><%= officePhone %></p>
+                </div>
+            </a>
+        </li>
+        <li class="table-view-cell media">
+            <a href="tel:<%= cellPhone %>" class="push-right">
+                <span class="media-object pull-left icon icon-call"></span>
+                <div class="media-body">
+                    Call Cell
+                    <p><%= cellPhone %></p>
+                </div>
+            </a>
+        </li>
+        <li class="table-view-cell media">
+            <a href="sms:<%= cellPhone %>" class="push-right">
+                <span class="media-object pull-left icon icon-sms"></span>
+                <div class="media-body">
+                    SMS
+                    <p><%= cellPhone %></p>
+                </div>
+            </a>
+        </li>
+        <li class="table-view-cell media">
+            <a href="mailto:<%= email %>" class="push-right">
+                <span class="media-object pull-left icon icon-mail"></span>
+                <div class="media-body">
+                    Email
+                    <p><%= email %></p>
+                </div>
+            </a>
+        </li>
+        <li class="table-view-cell media">
+            <a href="#employees/<%= id %>/map" class="push-right">
+                <span class="media-object pull-left icon icon-location"></span>
+                <div class="media-body">
+                    Location
+                    <p><%= city %></p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
